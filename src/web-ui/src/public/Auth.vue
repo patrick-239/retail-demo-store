@@ -3,9 +3,23 @@
     <div v-if="showingSignUp" class="container text-left">
       <p>We require you to enter an email address to send a code to verify your account.</p>
       <p>Passwords must contain at least 8 characters, including an uppercase letter, a lowercase letter, a special character, and a number.</p>
+   
+    <p>Click the Button to show an example of Fraudent User input</p>
+    <button class="btn-primary" v-on:click="isHidden = !isHidden">
+    <template v-if="isHidden">Show fraudent user input</template>
+    <template v-else>Hide fraudent user input</template>
+    </button>
+
+    <div v-if="!isHidden">
+      <br>State: LA
+      <br>Postal code: 15214
+      <br>Adress: Blabla 5
     </div>
+    
+   </div>
     <AmplifyAuthenticator :authConfig="authConfig" ref="authenticator" />
   </SecondaryLayout>
+  
 </template>
 
 <script>
@@ -37,15 +51,39 @@ export default {
               required: true
             },
             {
-              label: 'Password',
-              key: 'password',
-              type: 'password',
-              required: true
-            },
-            {
               label: 'Username',
               key: 'username',
               type: 'string',
+              required: true
+            },
+            {
+              label: 'Phone number',
+              key: "phone_number",
+              type: 'string',
+              required: true
+            }, 
+              {
+              label: 'State',
+              key: "billing_state",
+              type: 'string',
+              required: true
+            },
+              {
+              label: 'Address',
+              key: "billing_address",
+              type: 'string',
+              required: true
+            },
+              {
+              label: 'Postal code',
+              key: "billing_postal",
+              type: 'string',
+              required: true
+            },
+            {
+              label: 'Password',
+              key: 'password',
+              type: 'password',
               required: true
             },
           ]
