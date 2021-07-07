@@ -92,6 +92,24 @@ Resources:
           StringAttributeConstraints:
             MinLength: '1'
             MaxLength: '200'
+        - Name: ip_address
+          AttributeDataType: String
+          Mutable: true
+          StringAttributeConstraints:
+            MinLength: '1'
+            MaxLength: '200'
+        - Name: user_agent
+          AttributeDataType: String
+          Mutable: true
+          StringAttributeConstraints:
+            MinLength: '1'
+            MaxLength: '200'
+        - Name: registration_time
+          AttributeDataType: Number
+          Mutable: true
+          StringAttributeConstraints:
+            MinLength: '1'
+            MaxLength: '200'
 
   # Creates a User Pool Client to be used by the identity pool
   UserPoolClient:
